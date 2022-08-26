@@ -1,0 +1,41 @@
+.toolbar {
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+  height: 60px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  &, &-logo {
+    align-items: center;
+    display: flex;
+  }
+
+  &-logo span {
+    letter-spacing: 2px;
+  }
+
+  &-spacer {
+    flex: 1;
+  }
+
+  & #twitter, & #youtube {
+    &-logo {
+      height: 40px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  & #twitter-logo {
+    margin: 0 8px;
+  }
+
+  & #youtube-logo {
+    margin: 0 16px;
+  }
+}
