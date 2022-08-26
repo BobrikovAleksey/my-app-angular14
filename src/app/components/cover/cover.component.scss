@@ -3,6 +3,8 @@
   flex
   font-semibold
   items-center
+  mt-4
+  mb-8
   relative
   min-w-fit;
 
@@ -10,21 +12,25 @@
     @apply
     absolute
     inset-y-auto
-    left-0;
-    width: 80px;
+    left-0
+    w-20;
+    rotate: 10deg;
   }
 
   & svg#rocket-smoke {
     @apply
     absolute
-    right-44
-    top-10;
-    height: calc(100vh - 95px);
+    right-20
+    top-8;
+    min-height: 860px;
+    height: calc(90vh);
+    rotate: -7deg;
     z-index: -10;
   }
 
   & span {
     @apply
+    bg-blue-500
     flex
     items-center
     justify-center
@@ -36,21 +42,10 @@
     text-center
     text-white
     whitespace-nowrap;
-    background-color: #1976d2;
   }
 }
 
-@media screen and (max-width: 767px) {
-  .cover {
-    & svg#rocket-smoke {
-      @apply
-      right-28
-      rotate-6;
-    }
-  }
-}
-
-@media screen and (max-width: 575px) {
+@media (max-width: 575px) {
   .cover svg#rocket-smoke {
     @apply hidden;
   }
