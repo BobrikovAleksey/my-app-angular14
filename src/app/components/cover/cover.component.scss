@@ -1,0 +1,57 @@
+.cover {
+  @apply
+  flex
+  font-semibold
+  items-center
+  relative
+  min-w-fit;
+
+  & svg#rocket {
+    @apply
+    absolute
+    inset-y-auto
+    left-0;
+    width: 80px;
+  }
+
+  & svg#rocket-smoke {
+    @apply
+    absolute
+    right-44
+    top-10;
+    height: calc(100vh - 95px);
+    z-index: -10;
+  }
+
+  & span {
+    @apply
+    flex
+    items-center
+    justify-center
+    ml-10
+    pl-12
+    pr-4
+    py-4
+    rounded
+    text-center
+    text-white
+    whitespace-nowrap;
+    background-color: #1976d2;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cover {
+    & svg#rocket-smoke {
+      @apply
+      right-28
+      rotate-6;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .cover svg#rocket-smoke {
+    @apply hidden;
+  }
+}
