@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./cover.component.scss']
 })
 export class CoverComponent {
-  title = 'My App';
+  title = 'My App 2022';
 }

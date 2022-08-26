@@ -1,0 +1,42 @@
+.card {
+  @apply
+  bg-neutral-50
+  cursor-pointer
+  flex
+  items-center
+  justify-center
+  leading-6
+  mb-4
+  mx-2
+  p-4
+  rounded
+  w-52;
+  border: 1px solid #eee;
+  transition: all 0.2s ease-in-out;
+
+  & .material-icons path {
+    fill: #888;
+  }
+
+  &.active {
+    @apply cursor-default;
+    border-color: #ddd;
+
+    & .material-icons path {
+      fill: #1976d2;
+    }
+  }
+
+  &:hover:not(.active) {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+
+    & .material-icons path {
+      fill: rgb(104, 104, 104);
+    }
+  }
+
+  &_title {
+    @apply ml-2;
+  }
+}
