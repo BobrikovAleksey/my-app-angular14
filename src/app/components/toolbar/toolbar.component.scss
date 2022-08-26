@@ -1,41 +1,41 @@
 .toolbar {
-  background-color: #1976d2;
-  color: white;
-  font-weight: 600;
-  height: 60px;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
+  @apply
+  absolute
+  bg-blue-500
+  font-semibold
+  h-16
+  inset-x-0
+  text-white
+  top-0;
 
-  &, &-logo {
-    align-items: center;
-    display: flex;
+  &, &_logo {
+    @apply
+    flex
+    items-center;
   }
 
-  &-logo span {
-    letter-spacing: 2px;
+  &_logo span {
+    @apply tracking-widest;
   }
 
-  &-spacer {
-    flex: 1;
+  &_spacer {
+    @apply flex-1;
   }
 
-  & #twitter, & #youtube {
-    &-logo {
-      height: 40px;
+  &_link {
+    @apply
+    h-10
+    ml-2.5
+    w-10;
 
-      &:hover {
-        opacity: 0.8;
-      }
+    &:hover {
+      @apply opacity-80;
     }
-  }
 
-  & #twitter-logo {
-    margin: 0 8px;
-  }
-
-  & #youtube-logo {
-    margin: 0 16px;
+    & svg {
+      @apply
+      h-5/6
+      w-5/6;
+    }
   }
 }
