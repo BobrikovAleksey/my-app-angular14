@@ -1,0 +1,57 @@
+.footer {
+  @apply
+  leading-5
+  mt-2;
+
+  &, &_link, &_star-badge {
+    @apply
+    flex
+    items-center;
+  }
+
+  &_title {
+    @apply mr-2;
+  }
+
+  &_star-badge {
+    @apply
+    font-semibold
+    mx-1
+    px-2.5
+    py-1
+    rounded-[3px]
+    text-xs
+    text-gray-900;
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+    border: 1px solid rgba(27, 31, 35, .2);
+
+    &:hover {
+      background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
+      border-color: rgba(27, 31, 35, .35);
+    }
+
+    & .material-icons {
+      @apply
+      h-4
+      mr-1
+      w-4;
+    }
+  }
+}
+
+svg#clouds {
+  @apply
+  bottom-[-200px]
+  fixed
+  w-full;
+  left: -20vh;
+  min-width: 1440px;
+  width: calc(100% + 20vh);
+  z-index: -10;
+}
+
+@media (max-width: 575px) {
+  svg#clouds {
+    @apply hidden;
+  }
+}
