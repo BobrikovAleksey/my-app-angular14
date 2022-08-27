@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 
 import { ICard } from './components/card/Card';
+import { ICardLink } from './components/card-link/CardLink';
+import { Icon } from './components/icon/Icon';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +11,34 @@ import { ICard } from './components/card/Card';
 })
 export class AppComponent {
   step = 'component';
+
+  resources: ICardLink[] = [
+    {
+      icon: Icon.School,
+      href: 'https://angular.io/tutorial',
+      title: 'Learn Angular',
+    },
+    {
+      icon: Icon.Code,
+      href: 'https://angular.io/cli',
+      title: 'CLI Documentation',
+    },
+    {
+      icon: Icon.AngularMaterial,
+      href: 'https://material.angular.io',
+      title: 'Angular Material',
+    },
+    {
+      icon: Icon.Whatshot,
+      href: 'https://blog.angular.io/',
+      title: 'Angular Blog',
+    },
+    {
+      icon: Icon.SavedSearch,
+      href: 'https://angular.io/devtools/',
+      title: 'Angular DevTools',
+    },
+  ]
 
   steps: ICard[] = [
     {

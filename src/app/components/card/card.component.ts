@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { ICard } from './Card';
+import { Icon } from '../icon/Icon';
 
 @Component({
   selector: 'app-card',
@@ -8,6 +9,8 @@ import { ICard } from './Card';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
+  Icon = Icon
+
   @Input() active: boolean = false
   @Input() item: ICard
 }

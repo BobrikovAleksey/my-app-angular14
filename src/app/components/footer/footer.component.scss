@@ -16,7 +16,7 @@
   &_star-badge {
     @apply
     font-semibold
-    mx-1
+    ml-2
     px-2.5
     py-1
     rounded-[3px]
@@ -36,22 +36,5 @@
       mr-1
       w-4;
     }
-  }
-}
-
-svg#clouds {
-  @apply
-  bottom-[-200px]
-  fixed
-  w-full;
-  left: -20vh;
-  min-width: 1440px;
-  width: calc(100% + 20vh);
-  z-index: -10;
-}
-
-@media (max-width: 575px) {
-  svg#clouds {
-    @apply hidden;
   }
 }

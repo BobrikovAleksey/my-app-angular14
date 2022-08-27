@@ -1,0 +1,20 @@
+:host-context(.card, .card-link) {
+  .icon .material-icons {
+    @apply
+    h-[24px]
+    w-auto;
+    fill: #888;
+  }
+}
+
+:host-context(.card.active) {
+  .icon .material-icons {
+    fill: #1976d2;
+  }
+}
+
+:host-context(.card:not(.active):hover, .card-link:hover) {
+  .icon .material-icons {
+    fill: rgb(104, 104, 104);
+  }
+}

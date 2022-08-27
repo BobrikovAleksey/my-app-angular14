@@ -1,40 +1,48 @@
 .cover {
   @apply
+  absolute
   flex
-  font-semibold
   items-center
-  mt-4
-  mb-8
-  relative
-  min-w-fit;
+  justify-center
+  left-0
+  top-24
+  w-full;
 
-  & svg#rocket {
+  &_header {
     @apply
-    absolute
-    inset-y-auto
-    left-0
-    w-20;
-    rotate: 10deg;
+    font-semibold
+    relative
+    w-fit;
+
+    #rocket, #rocket-smoke {
+      @apply absolute;
+    }
+
+    #rocket {
+      @apply
+      inset-y-1/2
+      left-[-2.75rem]
+      m-auto
+      rotate-[10deg]
+      w-20;
+    }
+
+    #rocket-smoke {
+      @apply
+      h-[860px]
+      left-[-30rem]
+      rotate-[-7deg]
+      top-12
+      z-[-10];
+    }
   }
 
-  & svg#rocket-smoke {
-    @apply
-    absolute
-    left-[-22rem]
-    top-8;
-    min-height: 860px;
-    height: 97vh;
-    rotate: -7deg;
-    z-index: -10;
-  }
-
-  & span {
+  &_title {
     @apply
     bg-blue-500
     flex
     items-center
     justify-center
-    ml-10
     pl-12
     pr-4
     py-4
@@ -43,10 +51,30 @@
     text-white
     whitespace-nowrap;
   }
+
+  &_footer {
+    @apply
+    absolute
+    bottom-[-1080px]
+    flex
+    justify-center
+    overflow-hidden
+    w-full
+    z-[-10];
+
+    #clouds {
+      @apply
+      scale-110
+      min-w-[1440px]
+      w-full;
+    }
+  }
 }
 
 @media (max-width: 575px) {
-  .cover svg#rocket-smoke {
-    @apply hidden;
+  .cover {
+    #rocket-smoke, #clouds {
+      @apply hidden;
+    }
   }
 }

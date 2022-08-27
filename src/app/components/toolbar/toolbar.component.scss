@@ -5,7 +5,6 @@
   font-semibold
   h-16
   inset-x-0
-  text-white
   top-0;
 
   &, &_logo {
@@ -15,7 +14,9 @@
   }
 
   &_logo span {
-    @apply tracking-widest;
+    @apply
+    text-white
+    tracking-widest;
   }
 
   &_spacer {
@@ -24,8 +25,10 @@
 
   &_link {
     @apply
+    flex
     h-10
-    ml-2.5
+    justify-center
+    mx-1.5
     w-10;
 
     &:hover {
