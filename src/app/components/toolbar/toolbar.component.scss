@@ -1,28 +1,4 @@
 .toolbar {
-  @apply
-  absolute
-  bg-blue-500
-  font-semibold
-  h-16
-  inset-x-0
-  top-0;
-
-  &, &_logo {
-    @apply
-    flex
-    items-center;
-  }
-
-  &_logo span {
-    @apply
-    text-white
-    tracking-widest;
-  }
-
-  &_spacer {
-    @apply flex-1;
-  }
-
   &_link {
     @apply
     flex

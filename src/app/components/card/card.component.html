@@ -1,4 +1,4 @@
-<button class="card"
+<button class="bg-neutral-50 cursor-pointer flex items-center justify-center leading-6 mb-4 p-4 rounded card"
         [ngClass]="{ active }"
         (click)="item.onClick()"
         tabindex="0"
@@ -6,6 +6,6 @@
 
   <app-icon [name]="Icon.Add"></app-icon>
 
-  <span class="card_title">{{ item.title }}</span>
+  <span class="ml-2">{{ item.title }}</span>
 
 </button>

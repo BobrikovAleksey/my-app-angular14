@@ -1,28 +1,14 @@
 .card-link {
   @apply
-  bg-neutral-50
-  cursor-pointer
-  flex
-  items-center
-  justify-center
-  leading-6
-  mb-4
   mx-2
-  px-4
-  py-6
-  rounded
-  max-w-[600px]
   w-60;
   border: 1px solid #eee;
   transition: all 0.2s ease-in-out;
+  max-width: 600px;
 
   &:hover {
-    transform: translateY(-3px);
     box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
-  }
-
-  &_title {
-    @apply ml-2;
+    transform: translateY(-3px);
   }
 }
 
@@ -30,7 +16,6 @@
   .card-link {
     @apply
     h-12
-    mb-4
     mx-0
     w-full;
   }

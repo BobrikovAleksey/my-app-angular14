@@ -1,10 +1,10 @@
-<div class="card-container">
+<div class="flex flex-col w-full max-w-[860px]">
 
-  <h2 class="card-container_title">{{ title }}</h2>
+  <h2 class="font-semibold text-center">{{ title }}</h2>
 
-  <p class="card-container_description">{{ description }}</p>
+  <p class="text-center">{{ description }}</p>
 
-  <div class="card-container_content">
+  <div class="flex flex-wrap justify-center mt-4 card-container_content">
     <ng-container *ngTemplateOutlet="template"></ng-container>
   </div>
 

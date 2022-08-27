@@ -1,79 +1,24 @@
 .cover {
-  @apply
-  absolute
-  flex
-  items-center
-  justify-center
-  left-0
-  top-24
-  w-full;
-
-  &_header {
-    @apply
-    font-semibold
-    relative
-    w-fit;
-
-    #rocket, #rocket-smoke {
-      @apply absolute;
-    }
-
-    #rocket {
-      @apply
-      inset-y-1/2
-      left-[-2.75rem]
-      m-auto
-      rotate-[10deg]
-      w-20;
-    }
-
-    #rocket-smoke {
-      @apply
-      h-[860px]
-      left-[-30rem]
-      rotate-[-7deg]
-      top-12
-      z-[-10];
-    }
+  &_rocket {
+    @apply rotate-[10deg];
+    left: -2.75rem;
   }
 
-  &_title {
-    @apply
-    bg-blue-500
-    flex
-    items-center
-    justify-center
-    pl-12
-    pr-4
-    py-4
-    rounded
-    text-center
-    text-white
-    whitespace-nowrap;
+  &_rocket-smoke {
+    @apply rotate-[-7deg];
+    left: -30rem;
+    z-index: -10;
   }
 
   &_footer {
-    @apply
-    absolute
-    bottom-[-1080px]
-    flex
-    justify-center
-    overflow-hidden
-    w-full
-    z-[-10];
-
-    #clouds {
-      @apply
-      scale-110
-      min-w-[1440px]
-      w-full;
-    }
+    bottom: -1080px;
+    z-index: -10;
   }
 }
 
 @media (max-width: 575px) {
   .cover {
-    #rocket-smoke, #clouds {
+    &_rocket-smoke, &_clouds {
       @apply hidden;
     }
   }
