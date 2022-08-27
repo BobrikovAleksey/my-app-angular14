@@ -2,30 +2,20 @@
 
 <app-cover></app-cover>
 
-<div class="content" role="main">
+<ng-template #refResources>
+  <app-card-link class="flex justify-center"
+                 *ngFor="let item of resources"
+                 [item]="item"
+  ></app-card-link>
+</ng-template>
 
-  <!-- Resources -->
-  <h2>Resources</h2>
-  <p>Here are some links to help you get started:</p>
+<ng-template #refSteps>
+  <app-card class="flex justify-center"
+            *ngFor="let item of steps"
+            [active]="item.value === step"
+            [item]="item"
+  ></app-card>
 
-  <div class="card-container">
-    <app-card-link *ngFor="let item of resources"
-                   [item]="item"
-    ></app-card-link>
-  </div>
-
-  <!-- Next Steps -->
-  <h2>Next Steps</h2>
-  <p>What do you want to do next with your app?</p>
-
-  <div class="card-container">
-    <app-card *ngFor="let item of steps"
-              [active]="item.value === step"
-              [item]="item"
-    ></app-card>
-  </div>
-
-  <!-- Terminal -->
   <div class="terminal" [ngSwitch]="step">
     <pre *ngSwitchDefault>ng generate component xyz</pre>
     <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
@@ -34,6 +24,23 @@
     <pre *ngSwitchCase="'test'">ng test</pre>
     <pre *ngSwitchCase="'build'">ng build</pre>
   </div>
+</ng-template>
+
+<div class="content" role="main">
+
+  <app-card-container
+    class="w-full"
+    title="Resources"
+    description="Here are some links to help you get started:"
+    [template]="refResources"
+  ></app-card-container>
+
+  <app-card-container
+    class="mt-2 w-full"
+    title="Next Steps"
+    description="What do you want to do next with your app?"
+    [template]="refSteps"
+  ></app-card-container>
 
   <!-- Links -->
   <div class="card-container">
