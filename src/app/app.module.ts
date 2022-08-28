@@ -9,6 +9,7 @@ import { CardContainerComponent } from './components/card-container/card-contain
 import { CardLinkComponent } from './components/card-link/card-link.component';
 import { CoverComponent } from './components/cover/cover.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { GlobalErrorComponent } from './components/global-error/global-error.component';
 import { IconComponent } from './components/icon/icon.component';
 import { ProductComponent } from './components/product/product.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
@@ -21,6 +22,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     CardLinkComponent,
     CoverComponent,
     FooterComponent,
+    GlobalErrorComponent,
     IconComponent,
     ProductComponent,
     ToolbarComponent

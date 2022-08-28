@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { delay, Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
+import {catchError, delay, Observable, retry, throwError} from 'rxjs';
 
+import { ErrorService } from './error.service';
 import { IProduct } from '../models/product';
 import { productsUrl } from './urls';
 
@@ -9,7 +10,10 @@ import { productsUrl } from './urls';
   providedIn: 'root'
 })
 export class ProductsService {
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private errorService: ErrorService
+  ) { }
 
   getAll(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(productsUrl, {
@@ -18,6 +22,15 @@ export class ProductsService {
           limit: 10,
         },
       }),
-    }).pipe(delay(500));
+    }).pipe(
+      delay(333),
+      retry(2),
+      catchError(this.errorHandler.bind(this))
+    );
+  }
+
+  private errorHandler(error: HttpErrorResponse) {
+    this.errorService.handle(error.message);
+    return throwError(() => error.message);
   }
 }
