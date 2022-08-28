@@ -1,0 +1,24 @@
+<div class="border-2 flex flex-col items-center mb-2 mx-auto py-4 px-6 rounded w-3/4">
+  <img class="bg-white border mb-2 p-4 rounded w-1/4" [src]="product.image" [alt]="product.title"/>
+
+  <h2 class="text-center text-md">{{ product.title }}</h2>
+
+  <p>Price: <span class="font-bold">{{ product.price | currency: '¥ ' }}</span></p>
+
+  <button
+    class="border mt-2.5 px-4 py-2 rounded"
+    [ngClass]="{
+      'bg-blue-400': isExpanded,
+      'bg-yellow-400': !isExpanded
+    }"
+    (click)="isExpanded = !isExpanded"
+  >
+    {{ isExpanded ? 'Hide' : 'Show' }} Details
+  </button>
+
+  <div class="p-2" *ngIf="isExpanded">
+    <p>{{ product.description }}</p>
+
+    <p class="pt-1.5">Rate: <span class="font-bold">{{ product.rating.rate | number: '.1' }}</span></p>
+  </div>
+</div>

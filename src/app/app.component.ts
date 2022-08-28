@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
+import { IProduct } from './models/product';
+import { ProductsService } from './services/products.service';
 import { ICard } from './components/card/Card';
 import { ICardLink } from './components/card-link/CardLink';
 import { Icon } from './components/icon/Icon';
@@ -9,8 +11,8 @@ import { Icon } from './components/icon/Icon';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  step = 'component';
+export class AppComponent implements OnInit {
+  products: IProduct[] = []
 
   resources: ICardLink[] = [
     {
@@ -40,6 +42,7 @@ export class AppComponent {
     },
   ]
 
+  step = 'component';
   steps: ICard[] = [
     {
       title: 'New Component',
@@ -72,4 +75,12 @@ export class AppComponent {
       onClick: () => { this.step = 'build' },
     },
   ];
+
+  constructor(private productsService: ProductsService) { }
+
+  ngOnInit(): void {
+    this.productsService.getAll().subscribe((products) => {
+      this.products = products;
+    });
+  }
 }
