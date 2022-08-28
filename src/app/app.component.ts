@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, tap } from 'rxjs';
 
 import { IProduct } from './models/product';
 import { ProductsService } from './services/products.service';
@@ -12,7 +13,9 @@ import { Icon } from './components/icon/Icon';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  products: IProduct[] = []
+  loading = false
+  products$: Observable<IProduct[]>
+  // products: IProduct[] = []
 
   resources: ICardLink[] = [
     {
@@ -79,8 +82,13 @@ export class AppComponent implements OnInit {
   constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
-    this.productsService.getAll().subscribe((products) => {
-      this.products = products;
-    });
+    this.loading = true;
+    this.products$ = this.productsService.getAll().pipe(
+      tap(() => this.loading = false)
+    );
+    // this.productsService.getAll().subscribe((products) => {
+    //   this.products = products;
+    //   this.loading = false;
+    // });
   }
 }
