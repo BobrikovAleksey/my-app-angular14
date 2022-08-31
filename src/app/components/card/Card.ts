@@ -1,5 +1,5 @@
 export interface ICard {
+  name: string
   title: string
-  value: string
-  onClick: Function
+  value: number
 }

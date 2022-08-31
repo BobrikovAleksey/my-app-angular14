@@ -13,4 +13,9 @@ export class CardComponent {
 
   @Input() active: boolean = false
   @Input() item: ICard
+  @Input() changeCard?: Function
+
+  clickHandler(): void {
+    this.changeCard && this.changeCard(this.item.value);
+  }
 }

@@ -1,0 +1,25 @@
+<ng-container>
+
+  <p *ngIf="loading" class="font-bold text-center text-lg">Loading...</p>
+
+  <div class="flex justify-center">
+    <input
+      class="border mb-2 mx-auto px-4 py-2 rounded w-3/4"
+      type="text"
+      placeholder="Filter..."
+      [(ngModel)]="term"
+    />
+  </div>
+
+  <ng-container *ngIf="products$ | async as products">
+    <app-product
+      *ngFor="let product of products | filterProducts:term"
+      [product]="product"
+    ></app-product>
+
+    <!--    <app-product-->
+    <!--      *ngFor="let product of products" [product]="product"-->
+    <!--    ></app-product>-->
+  </ng-container>
+
+</ng-container>
