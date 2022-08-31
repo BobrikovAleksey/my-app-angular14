@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
+import { FilterProductsPipe } from './pipes/filter-products.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardComponent } from './components/card/card.component';
@@ -16,6 +18,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
+    FilterProductsPipe,
     AppComponent,
     CardComponent,
     CardContainerComponent,
@@ -30,6 +33,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
   imports: [
     AppRoutingModule,
     BrowserModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],

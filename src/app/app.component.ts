@@ -13,6 +13,7 @@ import { Icon } from './components/icon/Icon';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  term = ''
   loading = false
   products$: Observable<IProduct[]>
   // products: IProduct[] = []
