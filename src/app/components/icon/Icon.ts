@@ -3,8 +3,13 @@ export enum Icon {
   Add = 'add',
   AngularMaterial = 'angular-material',
   ChevronRight= 'chevron-right',
+  Close = 'close',
   Code = 'code',
+  Menu = 'menu',
   SavedSearch = 'saved-search',
   School = 'school',
+  ShoppingCart = 'shopping-cart',
+  ShoppingCartAdd = 'shopping-cart-add',
+  ShoppingCartFull = 'shopping-cart-full',
   Whatshot = 'whatshot',
 }

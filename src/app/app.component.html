@@ -1,17 +1,35 @@
-<app-global-error></app-global-error>
+<div class="min-h-full">
 
-<app-toolbar></app-toolbar>
+  <app-global-error></app-global-error>
 
-<app-cover></app-cover>
+  <app-toolbar></app-toolbar>
 
-<div class="content" role="main">
+  <div class="content relative" role="main">
 
-  <div class="flex flex-col justify-center w-full">
+    <app-cover></app-cover>
 
-    <router-outlet></router-outlet>
+    <div class="flex flex-col justify-center w-full">
+
+      <router-outlet></router-outlet>
+
+    </div>
+
+    <app-footer></app-footer>
 
   </div>
 
-  <app-footer></app-footer>
-
+  <header class="bg-white shadow">
+    <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
+    </div>
+  </header>
+  <main>
+    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+      <!-- Replace with your content -->
+      <div class="px-4 py-6 sm:px-0">
+        <div class="h-96 rounded-lg border-4 border-dashed border-gray-200"></div>
+      </div>
+      <!-- /End replace -->
+    </div>
+  </main>
 </div>

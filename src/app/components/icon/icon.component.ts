@@ -11,4 +11,5 @@ export class IconComponent {
   Icon = Icon
 
   @Input() name: Icon = Icon.None
+  @Input() classList = ''
 }

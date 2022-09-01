@@ -7,12 +7,12 @@
   &_rocket-smoke {
     @apply rotate-[-7deg];
     left: -30rem;
-    z-index: -10;
+    z-index: -5;
   }
 
   &_footer {
     bottom: -1080px;
-    z-index: -10;
+    z-index: -5;
   }
 }
 
